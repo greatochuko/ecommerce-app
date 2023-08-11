@@ -65,23 +65,59 @@ header .logo {
   color: white;
 }
 
+button.user-btn {
+  background-color: transparent;
+  border: none;
+  color: rgb(24, 24, 24);
+  font-size: 14px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+button.user-btn span {
+  font-weight: 500;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+button.user-btn span i {
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+button.user-btn:hover {
+  color: #3581B8;
+}
+
 button.cart-btn {
   background-color: transparent;
   border: none;
-  color: #3581B8;
-  font-size: 2rem;
+  color: rgb(24, 24, 24);
+  font-size: 14px;
   position: relative;
+}
+
+button.cart-btn span {
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+button.cart-btn:hover {
+  color: #3581B8;
 }
 
 .cart-num {
   position: absolute;
-  top: 2px;
+  top: -2px;
   left: 10px;
-  font-size: 15px;
-  background-color: white;
+  font-size: 12px;
+  background-color: #3581B8;
+  color: white;
   border-radius: 50%;
-  width: 18px;
-  height: 18px;
+  width: 15px;
+  height: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -123,16 +159,27 @@ button.cart-btn {
 .product .action {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-.product p {
+.product .action p {
   font-weight: 500;
   font-size: 24px;
   color: rgb(24, 24, 24);
 }
 
+.product .action p.added {
+  color: rgb(170, 170, 170);
+  font-style: italic;
+  font-size: 14px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
 .product .action button {
   border-radius: 5px;
+  height: 40px;
   padding: 0 10px;
   border: none;
   background-color: #37acff;
@@ -155,10 +202,12 @@ button.cart-btn {
   flex: 2;
   background-color: white;
   padding: 50px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .shopping-cart .header {
+  text-align: center;
   display: flex;
   gap: 20px;
 }
@@ -175,6 +224,25 @@ button.cart-btn {
 .shopping-cart .header h4:first-child {
   flex: 4;
   text-align: left;
+}
+
+.shopping-cart button.continue-shopping {
+  background-color: white;
+  color: #3581B8;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  width: fit-content;
+  padding: 10px 10px 10px 0;
+}
+
+.shopping-cart button.continue-shopping:hover {
+  color: blue;
+}
+
+.shopping-cart button.continue-shopping:active {
+  color: darkblue;
 }
 
 
@@ -196,8 +264,8 @@ hr {
 .cart-items {
   display: flex;
   flex-direction: column;
-  gap: 1px;
-  background-color: rgb(216, 216, 216);
+  flex: 1;
+  gap: 20px;
 }
 
 .cart-item {
@@ -206,7 +274,6 @@ hr {
   gap: 20px;
   grid-template-columns: 4fr 1fr 1fr;
   background-color: white;
-  padding: 20px 0;
 }
 
 .cart-item img {
@@ -225,22 +292,31 @@ hr {
   margin-left: 10px;
 }
 
-.cart-item .details h2 {
+.cart-item p {
   font-size: 15px;
-  font-weight: 500;
+  font-weight: bold;
+  color: rgb(70, 70, 70);
   text-align: left;
+}
+
+.cart-item .price,
+.cart-item .total {
+  text-align: center;
 }
 
 .cart-item .details .remove {
   width: fit-content;
   border: none;
   background-color: white;
-  color: red;
+  color: rgb(255, 82, 82);
   font-weight: 500;
   padding: 5px 10px;
   border-radius: 5px;
 }
 
+.cart-item .details button:hover {
+  color: red;
+}
 
 .cart-item .details button:active {
   color: darkred;
@@ -249,6 +325,7 @@ hr {
 .cart-item .quantity {
   display: flex;
   height: 20px;
+  align-items: center;
 }
 
 .cart-item .quantity button {

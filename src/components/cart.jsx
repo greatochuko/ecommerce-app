@@ -1,7 +1,12 @@
 import CartItem from "./cart-item";
 import { useState } from "react";
 
-export default function Cart({ cartItems, setCartItems }) {
+export default function Cart({
+  cartItems,
+  setCartItems,
+  productList,
+  setProductList,
+}) {
   const [shipping, setShipping] = useState("standard");
   const initialValue = 0;
   const totalPrice =
@@ -27,15 +32,18 @@ export default function Cart({ cartItems, setCartItems }) {
           <h4>Total</h4>
         </div>
         <ul className="cart-items">
-          {cartItems.map((product) => (
+          {cartItems.map((cartItem) => (
             <CartItem
-              key={cartItems.indexOf(product)}
-              product={product}
+              key={cartItems.indexOf(cartItem)}
+              setProductList={setProductList}
+              productList={productList}
+              cartItem={cartItem}
               cartItems={cartItems}
               setCartItems={setCartItems}
             />
           ))}
         </ul>
+        <button className="continue-shopping">&larr; Continue Shopping</button>
       </div>
       <div className="order-summary">
         <h3>Order Summary</h3>

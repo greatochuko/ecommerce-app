@@ -6,6 +6,7 @@ export default function Product({
 }) {
   const productIndex = productList.indexOf(product);
   let newProductList = productList.slice();
+
   function handleAddItem() {
     newProductList[productIndex] = { ...product, isAdded: true };
     setProductList(newProductList);
@@ -22,7 +23,7 @@ export default function Product({
           {!product.isAdded ? (
             <button onClick={handleAddItem}>Add to cart</button>
           ) : (
-            <button onClick={handleAddItem}>Remove</button>
+            <p className="added">Added to cart</p>
           )}
         </div>
       </div>

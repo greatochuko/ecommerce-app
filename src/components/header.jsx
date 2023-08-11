@@ -8,9 +8,18 @@ export default function Header({ cartIsOpen, setCartIsOpen, cartItems }) {
         <input type="text" placeholder="Search..." />
         <button>Search</button>
       </form>
+      <button className="user-btn">
+        <i class="fa-solid fa-user"></i>
+        <span>
+          <p>Account</p> <i class="fa-solid fa-angle-down"></i>
+        </span>
+      </button>
       {!cartIsOpen ? (
         <button className="cart-btn" onClick={() => setCartIsOpen(true)}>
-          <i className="fa-solid fa-cart-shopping"></i>
+          <i class="fa-solid fa-cart-shopping">
+            <span>Cart</span>
+          </i>
+
           <p className="cart-num">{cartItems.length}</p>
         </button>
       ) : (
